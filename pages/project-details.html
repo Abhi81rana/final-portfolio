@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>URL Shortener Case Study — Abhishek Kumar Rana</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="case-page">
+  <div id="cursor-glow"></div>
+
+  <nav class="nav">
+    <a class="logo" href="../index.html"><span class="logo-mark">AR</span><span>Abhishek Kumar Rana</span></a>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a class="active" href="projects.html">Projects</a>
+      <a href="education.html">Education</a>
+      <a href="resume.html">Resume</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="icon-btn menu-btn" data-menu aria-label="Open menu">☰</button>
+    </div>
+  </nav>
+
+  <main class="page">
+    <section class="case-hero container reveal">
+      <div class="case-breadcrumb"><a href="projects.html">Projects</a><span>/</span><b>URL Shortener</b></div>
+      <div class="case-eyebrow">BACKEND CASE STUDY <span>01</span></div>
+      <h1>URL Shortener<br><span class="gradient-text">from request to redirect.</span></h1>
+      <p>
+        A practical backend project built to understand how routes, identifiers,
+        persistence and redirect flows work together inside a small web service.
+      </p>
+      <div class="case-hero-actions">
+        <a class="btn btn-primary" href="projects.html">← All Projects</a>
+        <a class="btn btn-secondary" href="https://github.com/Abhi81rana" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="case-overview reveal">
+        <div>
+          <span>ROLE</span><strong>Backend Developer</strong>
+        </div>
+        <div>
+          <span>STACK</span><strong>Node.js · Express.js · MongoDB</strong>
+        </div>
+        <div>
+          <span>CORE FLOW</span><strong>Generate → Store → Redirect → Track</strong>
+        </div>
+      </div>
+    </section>
+
+    <section id="url-shortener-real-screenshot" class="section container">
+      <div class="case-section-head reveal">
+        <div>
+          <div class="kicker">04 / Real Project Screenshot</div>
+          <h2>See the actual<br><span class="gradient-text">application UI.</span></h2>
+        </div>
+        <p>This screenshot is from the URL Shortener project you provided, showing the running application interface.
+        </p>
+      </div>
+      <figure class="real-project-shot reveal">
+        <div class="shot-browser">
+          <div class="shot-top"><i></i><i></i><i></i><span>URL Shortener</span></div>
+          <img src="../assets/images/projects/url-shortener/home.jpg" alt="URL Shortener application screenshot">
+        </div>
+        <figcaption><span>01</span> URL Shortener — real project interface</figcaption>
+      </figure>
+    </section>
+
+    <section class="section container">
+      <div class="case-section-head reveal">
+        <div>
+          <div class="kicker">01 / Problem</div>
+          <h2>Make long URLs<br><span class="gradient-text">easier to share.</span></h2>
+        </div>
+        <p>
+          The project explores the core mechanics of a URL shortening service:
+          accepting a long URL, generating a compact identifier, storing the mapping,
+          and resolving that identifier later.
+        </p>
+      </div>
+
+      <div class="case-two-col">
+        <article class="case-feature-card reveal">
+          <span class="case-icon">01</span>
+          <h3>Input</h3>
+          <p>A user provides the original destination URL through the application.</p>
+        </article>
+        <article class="case-feature-card reveal">
+          <span class="case-icon">02</span>
+          <h3>Identifier</h3>
+          <p>A short ID is generated so the original address can be referenced compactly.</p>
+        </article>
+        <article class="case-feature-card reveal">
+          <span class="case-icon">03</span>
+          <h3>Persistence</h3>
+          <p>The mapping is stored in MongoDB so the short URL can be resolved later.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="case-section-head reveal">
+        <div>
+          <div class="kicker">02 / Architecture</div>
+          <h2>One small system.<br><span class="gradient-text">Four connected layers.</span></h2>
+        </div>
+        <p>Visualizing the request path makes the backend easier to understand and debug.</p>
+      </div>
+
+      <div class="architecture reveal">
+        <div class="architecture-step">
+          <span class="arch-no">01</span>
+          <div class="arch-icon">UI</div>
+          <h3>Client</h3>
+          <p>Submits the long URL.</p>
+        </div>
+        <div class="arch-connector">→</div>
+        <div class="architecture-step">
+          <span class="arch-no">02</span>
+          <div class="arch-icon">API</div>
+          <h3>Express</h3>
+          <p>Receives the request and applies the route.</p>
+        </div>
+        <div class="arch-connector">→</div>
+        <div class="architecture-step">
+          <span class="arch-no">03</span>
+          <div class="arch-icon">DB</div>
+          <h3>MongoDB</h3>
+          <p>Stores short ID and destination data.</p>
+        </div>
+        <div class="arch-connector">→</div>
+        <div class="architecture-step">
+          <span class="arch-no">04</span>
+          <div class="arch-icon">↗</div>
+          <h3>Redirect</h3>
+          <p>Resolves the short ID and sends the visitor onward.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="case-section-head reveal">
+        <div>
+          <div class="kicker">03 / Features</div>
+          <h2>What the project<br><span class="gradient-text">actually handles.</span></h2>
+        </div>
+      </div>
+
+      <div class="feature-matrix">
+        <article class="matrix-card reveal"><span>01</span>
+          <h3>Short ID generation</h3>
+          <p>Creates a compact identifier for each original URL.</p>
+        </article>
+        <article class="matrix-card reveal"><span>02</span>
+          <h3>Redirect handling</h3>
+          <p>Uses the short ID to find the destination and redirect the visitor.</p>
+        </article>
+        <article class="matrix-card reveal"><span>03</span>
+          <h3>Visit history</h3>
+          <p>Keeps visit-related information as part of the URL record.</p>
+        </article>
+        <article class="matrix-card reveal"><span>04</span>
+          <h3>Database persistence</h3>
+          <p>Stores URL documents using a MongoDB data model.</p>
+        </article>
+        <article class="matrix-card reveal"><span>05</span>
+          <h3>REST-style routes</h3>
+          <p>Separates endpoint responsibilities so the flow stays understandable.</p>
+        </article>
+        <article class="matrix-card reveal"><span>06</span>
+          <h3>Server-side validation</h3>
+          <p>Handles missing input and route-level conditions explicitly.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="case-highlight reveal">
+        <div class="highlight-code">
+          <div class="fake-terminal-head"><span></span><span></span><span></span><b>request-flow</b></div>
+          <div class="fake-code">
+            <div><span class="line-no">01</span><span class="kw">POST</span> <span class="str">/url</span></div>
+            <div><span class="line-no">02</span><span class="kw">→</span> validate request body</div>
+            <div><span class="line-no">03</span><span class="kw">→</span> generate <span class="str">shortId</span>
+            </div>
+            <div><span class="line-no">04</span><span class="kw">→</span> save document</div>
+            <div><span class="line-no">05</span><span class="kw">→</span> return short URL</div>
+            <div><span class="line-no">06</span><span class="kw">GET</span> <span class="str">/:shortId</span></div>
+            <div><span class="line-no">07</span><span class="kw">→</span> lookup document</div>
+            <div><span class="line-no">08</span><span class="kw">→</span> record visit</div>
+            <div><span class="line-no">09</span><span class="kw">→</span> redirect</div>
+          </div>
+        </div>
+        <div class="highlight-copy">
+          <div class="kicker">04 / Data flow</div>
+          <h2>See the system<br><span class="gradient-text">one request at a time.</span></h2>
+          <p>
+            The useful lesson is not just that the service works — it is seeing how
+            each request travels through the application and how each layer has a clear job.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="case-two-panel">
+        <article class="case-story reveal">
+          <div class="kicker">05 / Challenges</div>
+          <h2>Debugging was part of the build.</h2>
+          <p>
+            Working through request data, route definitions, model structure,
+            database connectivity and server-side errors helped connect individual
+            Node.js concepts into one backend mental model.
+          </p>
+          <div class="story-points">
+            <span>Routes</span><span>Models</span><span>Requests</span><span>Database</span><span>Errors</span>
+          </div>
+        </article>
+
+        <article class="case-story reveal">
+          <div class="kicker">06 / What I learned</div>
+          <h2>Backend becomes clearer when the data flow is visible.</h2>
+          <p>
+            APIs, models, routing and persistence work together as one system.
+            Breaking the flow into small steps makes debugging and future improvements easier.
+          </p>
+          <div class="story-points">
+            <span>API thinking</span><span>Data flow</span><span>Debugging</span><span>Persistence</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="next-project reveal">
+        <div>
+          <div class="kicker">07 / Continue exploring</div>
+          <h2>More projects<br><span class="gradient-text">await.</span></h2>
+        </div>
+        <a class="btn btn-primary" href="projects.html">Back to Projects →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <div class="footer-row">
+      <span>© 2026 Abhishek Kumar Rana. Built with HTML, CSS & JavaScript.</span>
+      <span>Designed for the next opportunity.</span>
+    </div>
+  </footer>
+
+  <div class="toast"></div>
+  <button class="scroll-top" aria-label="Back to top">↑</button>
+  <script src="../script.js"></script>
+</body>
+
+</html>
